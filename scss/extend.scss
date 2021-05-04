@@ -10,4 +10,12 @@
 }
 
 // z-index
-@include ops.mapToClassPure("z",$z-index-map,$breakpoint-map,$state-map);
+@include ops.mapToClassPure("z",$z-index-map, "z-index", $breakpoint-map,$state-map);
+
+// list-styles
+@each $list, $style in $list-styles{
+  .list-#{$list}{
+    list-style-type: $style;
+  }
+}
+

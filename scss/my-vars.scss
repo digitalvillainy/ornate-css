@@ -10,7 +10,7 @@ $items: 6;
 $breakpoint-map: (
         "xs": 320px,
         "sm": 425px,
-        "md":768px,
+        "md": 768px,
         "lg": 1024px,
         "xl": 1440px,
         "xxl": 2560px,
@@ -144,7 +144,7 @@ $z-index-map: (
         "auto": auto,
 );
 
-$list-styles:("none", "square", "disc");
+$list-styles:("none":none, "square":square, "disc":disc);
 
 /* Display */
 
