@@ -7,7 +7,15 @@
 $grid-container-prefix: 'grid';
 $columns: 12;
 $items: 6;
-$breakpoint-map: ("md":768px,"lg":1024px);
+$breakpoint-map: (
+        "xs": 320px,
+        "sm": 425px,
+        "md": 768px,
+        "lg": 1024px,
+        "xl": 1440px,
+        "xxl": 2560px,
+        'xxxl': 3440px
+);
 $placement-key: "place";
 $placement-map: ("x":"justify-self", "y":"align-self");
 $placement-properties: ("start":"start", "end":"end", "center":"center", "stretch":"stretch") ;
@@ -32,10 +40,11 @@ $height-width-value-map:("25", "50", "75", "100");
 
 
 /* Colors */
-$primaryColor: #15eece;
-$accentColor: #21d593;
-$successColor: #1f921f;
-$warningColor: #c92d2d;
+$primaryColor: #42a5f5;
+$accentColor: #9c27b0;
+$successColor: #66bb6a;
+$warningColor: #ffc107;
+$errorColor: #c92d2d;
 $gray: rgba(0,0,0,.2);
 $white: #e8e5e5;
 $black: #101010;
@@ -47,6 +56,7 @@ $color-map:(
   "accent":$accentColor,
   "success":$successColor,
   "warning":$warningColor,
+  "error":$errorColor,
   "transparent":transparent,
   "gray": $gray,
   "white": $white,
@@ -103,7 +113,40 @@ $fontSize-map:(
   "xxl":12
 );
 $decoration-map:("underline","none");
+$decoration-style-map:(
+        "wavy",
+        "solid",
+        "double",
+        "dotted",
+        "dashed"
+);
 $weight-map:("light":200,"strong":700);
+$text-transform-map: (
+        "uppercase",
+        "lowercase",
+        "capitalize",
+        "normal-case"
+);
+
+$text-align: (
+        "right",
+        "center",
+        "left",
+        "justify"
+);
+
+/* Z-Index */
+$z-index-map: (
+        "0": 0,
+        "10": 10,
+        "20": 20,
+        "30": 30,
+        "40": 40,
+        "50": 50,
+        "auto": auto,
+);
+
+$list-styles:("none":none, "square":square, "disc":disc);
 
 /* Display */
 
