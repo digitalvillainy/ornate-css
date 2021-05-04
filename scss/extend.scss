@@ -1,8 +1,8 @@
 @use "../node_modules/gaudiamus-css/scss/components/operations" as ops;
 
 // see https://gaudiamus-css.github.io/advanced.html
-@each $colorName, $colorValue in $color-map{
-  .card-#{$colorName}{
+@each $colorName, $colorValue in $color-map {
+  .card-#{$colorName} {
     @extend .b-rounded-2, .b-1, .p-3;
     border-color: $colorValue;
   }
@@ -10,12 +10,16 @@
 }
 
 // z-index
-@include ops.mapToClassPure("z",$z-index-map, "z-index", $breakpoint-map,$state-map);
+@include ops.mapToClassPure("z", $z-index-map, "z-index", $breakpoint-map, $state-map);
 
 // list-styles
-@each $list, $style in $list-styles{
-  .list-#{$list}{
+@each $list, $style in $list-styles {
+  .list-#{$list} {
     list-style-type: $style;
   }
 }
 
+// Updates to typography
+@include ops.mapToClass("text", $text-transform-map, "text-transform", $breakpoint-map, $state-map, true);
+
+@include ops.mapToClass("text", $text-align, "text-align", $breakpoint-map, $state-map, true);
