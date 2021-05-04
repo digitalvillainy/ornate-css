@@ -23,3 +23,11 @@
 @include ops.mapToClass("text", $text-transform-map, "text-transform", $breakpoint-map, $state-map, true);
 
 @include ops.mapToClass("text", $text-align, "text-align", $breakpoint-map, $state-map, true);
+
+// Text-Decoration styles
+@each $decoration in $decoration-style-map{
+  .text-decoration-#{$decoration}{
+    text-decoration: underline;
+    text-decoration-style: unquote($decoration);
+  }
+}
