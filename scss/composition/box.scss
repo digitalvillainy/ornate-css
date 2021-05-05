@@ -1,0 +1,26 @@
+.box-low{
+  @extend .font-md, .p-3, .b-1, .b-accent, .b-rounded, .raise-1-gray, .m-t-3, .m-b-3;
+}
+
+.box-med{
+  @extend .font-md, .p-3, .b-1, .b-accent, .b-rounded, .raise-2-gray, .m-t-3, .m-b-3;
+}
+
+.box-high{
+  @extend .font-md, .p-3, .b-1, .b-accent, .b-rounded, .raise-3-gray, .m-t-3, .m-b-3;
+}
+
+@each $color, $value in $color-map{
+  .box-low-#{$color}{
+    @extend .font-md, .p-3, .b-1, .b-#{$color}, .b-rounded, .raise-1-#{$color}, .m-t-3, .m-b-3;
+  }
+
+  .box-med-#{$color}{
+    @extend .font-md, .p-3, .b-1, .b-#{$color}, .b-rounded, .raise-2-#{$color}, .m-t-3, .m-b-3;
+  }
+
+  .box-high-#{$color}{
+    @extend .font-md, .p-3, .b-1, .b-#{$color}, .b-rounded, .raise-3-#{$color}, .m-t-3, .m-b-3;
+  }
+}
+
