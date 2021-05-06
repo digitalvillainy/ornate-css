@@ -1,0 +1,60 @@
+@use "./node_modules/gaudiamus-css/scss/components/operations" as ops;
+
+.btn {
+  @extend .b-rounded, .font-md, .b-gray, .b-1, .text-uppercase, .m-2, .font-strong;
+  cursor: pointer;
+}
+
+.btn-fab {
+  @extend .b-rounded, .font-md, .b-gray, .b-1, .m-2, .font-strong;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-pill {
+  @extend .b-rounded, .font-md, .b-gray, .b-1, .text-uppercase, .m-2, .font-strong;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+@include ops.generate-states("btn", $state-map);
+@include ops.generate-states("btn-fab", $state-map);
+@include ops.generate-states("btn-pill", $state-map);
+
+
+@each $color, $value in $color-map {
+  .btn-fab-#{$color} {
+    @extend .b-rounded, .font-md, .b-#{$color}, .bg-#{$color}, .b-1, .m-2, .font-strong;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  @if $color != "white" {
+    .btn-#{$color} {
+      @extend .b-rounded, .font-md, .b-#{$color}, .bg-#{$color}, .b-1, .text-uppercase, .m-2, .font-strong, .text-white;
+      cursor: pointer;
+    }
+
+    .btn-pill-#{$color} {
+      @extend .b-rounded, .font-md, .b-#{$color}, .bg-#{$color}, .b-1, .text-uppercase, .m-2, .font-strong, .text-white;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  } @else {
+    .btn-#{$color} {
+      @extend .b-rounded, .font-md, .b-#{$color}, .bg-#{$color}, .b-1, .text-uppercase, .m-2, .font-strong, .text-black;
+      cursor: pointer;
+    }
+
+    .btn-pill-#{$color} {
+      @extend .b-rounded, .font-md, .b-#{$color}, .bg-#{$color}, .b-1, .text-uppercase, .m-2, .font-strong, .text-black;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  }
+  @include ops.generate-states("btn-#{$color}", $state-map);
+  @include ops.generate-states("btn-fab-#{$color}", $state-map);
+  @include ops.generate-states("btn-pill-#{$color}", $state-map);
+}
+
+
+// TODO: Change So that the file size is smaller.

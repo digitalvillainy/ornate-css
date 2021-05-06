@@ -5,4 +5,6 @@ h2{
   @extend .text-accent, .font-xl;
 }
 
-@import "./composition/box";
+//@import "./composition/box";
+
+@import "composition/buttons";
